@@ -377,6 +377,8 @@ summary {
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
 <pre class="r"><code>library(lattice)</code></pre>
+<p>The following code sets the default to save the figures in a folder.</p>
+<pre class="r"><code>knitr::opts_chunk$set( fig.path = &quot;figs/fig-&quot;)</code></pre>
 <p>The following code loads the activity data from the provided csv file. The activity data includes two months of activity data recorded in 5 minute intervals. The table includes the numbers of steps in the interval, the date, and the start time of the interval recorded as a integer.</p>
 <p>The date is provided as character class, and this code converts it to date format.</p>
 <pre class="r"><code>actdata &lt;- read.csv(&quot;/Users/stephanie.toering/Documents/RProjects/RepData_PeerAssessment1/activity.csv&quot;)
