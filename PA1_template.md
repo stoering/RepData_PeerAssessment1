@@ -1,8 +1,8 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
 output: 
-  html_document:
-    keep_md: true
+  html_document: 
+    keep_md: yes
 ---
 The following code loads the packages required to execute the code.
 
@@ -30,6 +30,12 @@ library(dplyr)
 
 ```r
 library(lattice)
+```
+The following code sets the default to save the figures in a folder.
+
+
+```r
+knitr::opts_chunk$set( fig.path = "figs/fig-")
 ```
 
 The following code loads the activity data from the provided csv file. The activity data includes two months of activity data recorded in 5 minute intervals. The table includes the numbers of steps in the interval, the date, and the start time of the interval recorded as a integer.
@@ -63,7 +69,7 @@ perday <- actdata %>%
 barplot(perday$Total_steps ~ perday$date, xlab = "Date", ylab = "Total steps", main = "Total Steps Taken Each Day")
 ```
 
-![](PA1_template_files/figure-html/steps per day-1.png)<!-- -->
+![](figs/fig-steps per day-1.png)<!-- -->
 
 ```r
 pdmean <- mean(perday$Total_steps)
@@ -95,7 +101,7 @@ perint <- actdata %>%
 plot(perint$Mean_steps ~ perint$interval, type = "l", xlab = "Interval", ylab = "Mean steps", main = "Mean Steps Taken During Each Time Interval")
 ```
 
-![](PA1_template_files/figure-html/daily pattern-1.png)<!-- -->
+![](figs/fig-daily pattern-1.png)<!-- -->
 
 
 ```r
@@ -143,7 +149,7 @@ perday2 <- actdata2 %>%
 barplot(perday2$Total_steps ~ perday2$date, xlab = "Date", ylab = "Total steps", main = "Total Steps Taken Each Day")
 ```
 
-![](PA1_template_files/figure-html/steps per day with replaced NA-1.png)<!-- -->
+![](figs/fig-steps per day with replaced NA-1.png)<!-- -->
 
 
 ```r
@@ -203,7 +209,7 @@ xyplot(perint2$Mean_steps ~ perint2$interval|perint2$Type,
        lty=1, type = "l")
 ```
 
-![](PA1_template_files/figure-html/plot by type of day-1.png)<!-- -->
+![](figs/fig-plot by type of day-1.png)<!-- -->
 
 This graph indicates that the individual does have different activity patterns on weekdays and weekends.
 
