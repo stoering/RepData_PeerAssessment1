@@ -1,14 +1,20 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
 output: 
-  html_document:
-    keep_md: true
+  html_document: 
+    keep_md: yes
 ---
 The following code loads the packages required to execute the code.
 
 ```{r, results='hide'}
 library(dplyr)
 library(lattice)
+```
+The following code sets the default to save the figures in a folder.
+
+```{r options}
+knitr::opts_chunk$set( fig.path = "figs/fig-")
+
 ```
 
 The following code loads the activity data from the provided csv file. The activity data includes two months of activity data recorded in 5 minute intervals. The table includes the numbers of steps in the interval, the date, and the start time of the interval recorded as a integer.
